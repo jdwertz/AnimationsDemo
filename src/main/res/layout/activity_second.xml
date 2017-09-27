@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/transitions_container">
+
+    <ImageView
+        android:id="@+id/googleLogo"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:src="@drawable/logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:transitionName="@string/transitionName"
+        />
+
+    <ImageView
+        android:id="@+id/androidDude"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/android"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reveal photo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/androidDude"
+        android:onClick="onRevealPhoto"
+        android:id="@+id/photoButton"
+        android:layout_marginTop="80dp"
+        />
+
+    <GridLayout
+        android:id="@+id/grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2"
+        app:layout_constraintTop_toBottomOf="@id/photoButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Top Left"
+            android:id="@+id/moveTopLeft"
+            android:onClick="moveTopLeft"
+
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Top Right"
+            android:id="@+id/moveTopRight"
+            android:onClick="moveTopRight"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bottom Left"
+            android:id="@+id/moveBottomLeft"
+            android:onClick="moveBottomLeft"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bottom Right"
+            android:id="@+id/moveBottomRight"
+            android:onClick="moveBottomRight"
+            />
+    </GridLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Final activity"
+        android:onClick="startFinalActivity"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grid"
+        android:layout_marginTop="10dp"
+        />
+
+</android.support.constraint.ConstraintLayout>
